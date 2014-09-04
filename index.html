@@ -6,74 +6,39 @@
     </head>
     
 	<body>
-	<div class="content">
-		<h2 style="text-align:center"> Calculation of &pi; using Monte Carlo's method </h2>
-		<div class="myConfig">
-		<p class="Setup"> Configuration </p>
-		<div class="form_div">
-			<form class="myForm" NAME="test">
-				<p class="myText">Square side: <input name='square' value="20" min="1" max="20" type="number" onChange="OnChangeValue(this.form)" /> </p>
-				<p class="myText">Circle radius: <input type="number" name="circle" min="1" max="10" value ="10" onChange="OnChangeValue(this.form)" /> </p>
-				<!-- Number of iterations: <input type="number"  name="iterations" value="100" onChange="OnChangeValue(this.form)"/>  -->
-				<p class="myText">Time interval:<input type="number" name="time_interval" min="1" max="1000" value="500" onChange="OnChangeTime(this.form)"/></p> 
-				<p class="myText">Point(s):<input type="number" name="nbPoints" min="1" max="1000" value="1" onChange="OnChangeNbPoints(this.form)"/></p><br> 
-			<button class="myButton" type="button" onClick="MyShow(this.form)">Start</button>
-			</form>
-		</div>
+	    <div class="content">
+		    <h2 style="text-align:center"> Calculation of &pi; using Monte Carlo's method </h2>
+		    <div class="myConfig">
+		        <p class="Setup"> Configuration </p>
+		        <div class="form_div">
+			        <form class="myForm" NAME="test">
+				        <p class="myText">Square side: <input name='square' value="20" min="1" max="20" type="number" onChange="OnChangeValue(this.form)" /> </p>
+				        <p class="myText">Circle radius: <input type="number" name="circle" min="1" max="10" value ="10" onChange="OnChangeValue(this.form)" /> </p>
+				        <p class="myText">Time interval:<input type="number" name="time_interval" min="1" max="1000" value="500" onChange="OnChangeTime(this.form)"/></p> 
+				        <p class="myText">Point(s):<input type="number" name="nbPoints" min="1" max="1000" value="1" onChange="OnChangeNbPoints(this.form)"/></p><br> 
+			        <button id="play_pause_btn" class="myButton" type="button" onClick="MyShow(this.form)">Start</button>
+					<button class="myButton" type="button" onClick="OnReset(this.form)">Reset</button>
+					<!-- <button class="myButton" type="button" onClick="MyShow(this.form)">Resart</button> -->
+			        </form>
+		        </div>
 		
-		<div class="Data">
-				<!-- <p id="density"> Density  : </p> -->
-			<p id="nb_inside" class="myText"> Number inside circle  :  0</p>
-			<p id="nb_outside" class="myText"> Number outside circle :  0 </p>
-			<p id="nb_iter" class="myText"> Number in square :  0 </p>
-			<p id="pi_approx" class="myText"> Approximation of PI   :  0 </p>
-			<p id="absolute_error" class="myText"> Absolute Error   :  0 </p>
-		</div>
+		        <div class="Data">
+			        <p id="nb_inside" class="myText"> Number inside circle  :  0</p>
+			        <p id="nb_outside" class="myText"> Number outside circle :  0 </p>
+			        <p id="nb_iter" class="myText"> Number in square :  0 </p>
+			        <p id="pi_approx" class="myText"> Approximation of PI   :  0 </p>
+			        <!-- <p id="absolute_error" class="myText"> Absolute Error   :  0 </p> -->
+		        </div>
+		    </div>
 		
-		
-		</div>
-		
-		<canvas class="myCanvas" id="a" width="500" height="500">
-			This text is displayed if your browser does not support HTML5 Canvas.
-		</canvas>
-        		
-<!-- 		<div>
-		<!-- <p id="density"> Density  : </p> -->
-		<!-- <p id="nb_inside" class="myText"> Number inside circle  :  0</p> -->
-		<!-- <p id="nb_outside" class="myText"> Number outside circle :  0 </p> -->
-		<!-- <p id="nb_iter" class="myText"> Number in square :  0 </p> -->
-		<!-- <p id="pi_approx" class="myText"> Approximation of PI   :  0 </p> -->
-		<!-- </div> --> 
-		
-		<script type='text/javascript' src='script.js'></script>
-		</div>
+		    <canvas class="myCanvas" id="a" width="500" height="500">
+			    This text is displayed if your browser does not support HTML5 Canvas.
+		    </canvas>
+
+            <canvas class="myCanvas" id="plot" width="500" height="250"></canvas>
+        				
+		    <script type='text/javascript' src='script.js'></script>
+	    </div>
 	</body>
 	
 </html>
-
-
-<!-- <HTML>
-<HEAD>
-<TITLE>JavaScript Form - Input Text Field</TITLE>
-<SCRIPT Language="JavaScript">
-<!--//
-function showAndClearField(frm){
-  if (frm.firstName.value == "")
-      alert("Hey! You didn't enter anything!")
-  else
-      alert("The field contains the text: " + frm.firstName.value)
-  frm.firstName.value = ""
-}
-
-</SCRIPT>
-</HEAD>
-<BODY>
-<FORM NAME="test">
-<H2>Enter something into the field and press the button. <br>
-Please try this a few times.</H2>
-<P>Enter your First Name: <INPUT TYPE="TEXT" NAME="firstName"><BR><BR>
-<INPUT TYPE="Button" Value="Show and Clear Input" onClick="showAndClearField(this.form)">
-</P>
-</FORM>
-</BODY>
-</HTML> -->
